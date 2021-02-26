@@ -1,0 +1,19 @@
+<project default= "cleanAndCompile">
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+    
+    <target name="cleanAndCompile" depends= "clean,compile">
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes"/>
+    </target>
+
+    <target name="run">
+       <java classname="edu.nmsu.cs.webserver.WebServer" classpath="./build/classes" fork="true"/>    
+    </target>
+
+</project>
