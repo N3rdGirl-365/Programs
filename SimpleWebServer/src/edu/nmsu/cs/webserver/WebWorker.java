@@ -97,6 +97,9 @@ public class WebWorker implements Runnable
 					Thread.sleep(1);
 				line = r.readLine();
 				System.err.println("Request line: (" + line + ")");
+            if(line.contains("favicon")){
+              System.out.println("*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*n*\n\n found it!!! \n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n*\n\n");            
+            }//end if
             //System.out.println("!!!" + line.substring(0,3));
             if (line.substring(0,3).equals("GET")){
                String directoryDraft = "null";
