@@ -67,12 +67,12 @@ public class RacingScore2
 	public static void main(String args[])
 	{
 		int s1, s2, s3;
-      if(args == null){
-         System.out.println("\n\n\n!!!! Null args\n\n\n");
-      }//end if null
-      if(args.length!=3){
-         System.out.println("\n\n\n!!!! Not full length. len = " + args.length + ".\n\n\n");
-      }//end lenth!=3
+      //if(args == null){
+         //System.out.println("\n\n\n!!!! Null args\n\n\n");
+      //}//end if null
+      //if(args.length!=3){
+         //System.out.println("\n\n\n!!!! Not full length. len = " + args.length + ".\n\n\n");
+      //}//end lenth!=3
 		if (args == null || args.length != 3)
 		{
 			System.err.println("Error: must supply three arguments!");
