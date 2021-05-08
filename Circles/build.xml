@@ -1,0 +1,41 @@
+<project default= "run">
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+    
+    <target name="cleanAndCompile" depends= "clean,compile">
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes">
+            <classpath location="lib/junit-4.13.1.jar"/>
+        </javac>
+    </target>
+
+    <target name="run" depends="cleanAndCompile">
+       <java classname="edu.nmsu.cs.circles.CircleRun" classpath="./build/classes" fork="true"/>    
+    </target>
+    
+    <target name= "circle1Test" depends= "cleanAndCompile">
+       <junit printsummary = "yes">
+           <classpath location="lib/junit-4.13.1.jar"/>
+           <classpath location=  "./build/classes"/>
+           <test name="edu.nmsu.cs.circles.Circle1Test"/>
+       </junit>
+    </target>
+
+    <target name= "circle2Test" depends= "cleanAndCompile">
+       <junit printsummary = "yes">
+           <classpath location="lib/junit-4.13.1.jar"/>
+           <classpath location=  "./build/classes"/>
+           <test name="edu.nmsu.cs.circles.Circle2Test"/>
+       </junit>
+    </target>
+    
+    <target name= "test" depends= "circle1Test, circle2Test">
+    </target>
+       
+
+</project>
